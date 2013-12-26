@@ -1,4 +1,4 @@
-package model;
+package bitpay.model;
 
 import org.json.JSONException;
 import org.json.simple.JSONObject;

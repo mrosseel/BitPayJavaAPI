@@ -1,24 +1,24 @@
-package test;
+package bitpay;
 
-import static org.junit.Assert.*;
-
-
-import model.BitPay;
-import model.Invoice;
-import model.InvoiceParams;
-import model.Rates;
-
+import bitpay.model.BitPay;
+import bitpay.model.Invoice;
+import bitpay.model.InvoiceParams;
+import bitpay.model.Rates;
 import org.json.simple.JSONArray;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 
 public class BitPayTest {
 
 	private BitPay bitpay;
 	private Invoice basicInvoice;
-	private static String API_KEY = "YOUR_API_KEY";
+	private static String API_KEY = "YOUR_API_KEY_HERE";
 	private static double BTC_EPSILON = .000000001;
 	private static double EPSILON = .001;
 	
@@ -34,11 +34,11 @@ public class BitPayTest {
 	}
 
 	@Test
-	public void testShouldCreateInvoice100BTC() {
+	public void testShouldCreateInvoice1BTC() {
 		this.bitpay = new BitPay(API_KEY, "BTC");
 		
-		Invoice invoice = this.bitpay.createInvoice(100);
-		assertEquals(invoice.getBtcPrice(), 100.0, BTC_EPSILON);
+		Invoice invoice = this.bitpay.createInvoice(1);
+		assertEquals(invoice.getBtcPrice(), 1.0, BTC_EPSILON);
 	}
 	
 	@Test
@@ -94,9 +94,9 @@ public class BitPayTest {
 		
 		InvoiceParams params = new InvoiceParams();
 		params.setBuyerName("Satoshi");
-		params.setBuyerEmail("satoshi@bitpay.com");
+		params.setBuyerEmail("satoshi@model.com");
 		params.setFullNotifications(true);
-		params.setNotificationEmail("satoshi@bitpay.com");
+		params.setNotificationEmail("satoshi@model.com");
 		
 		Invoice invoice = this.bitpay.createInvoice(100, params);
 		

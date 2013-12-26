@@ -1,4 +1,4 @@
-package model;
+package bitpay.model;
 
 import java.io.BufferedReader;
 import java.io.IOException;
