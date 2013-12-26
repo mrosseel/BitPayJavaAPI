@@ -126,7 +126,7 @@ public class BitPay {
 	
 	/**
 	 * Get an existing Invoice by it's ID. The ID is used in the url:
-	 * "http://model.model.com/invoice?id=<ID>"
+	 * "http://bitpay.com/invoice?id=<ID>"
 	 * @param invoiceId
 	 * @return Invoice
 	 */

@@ -94,9 +94,9 @@ public class BitPayTest {
 		
 		InvoiceParams params = new InvoiceParams();
 		params.setBuyerName("Satoshi");
-		params.setBuyerEmail("satoshi@model.com");
+		params.setBuyerEmail("satoshi@bitpay.com");
 		params.setFullNotifications(true);
-		params.setNotificationEmail("satoshi@model.com");
+		params.setNotificationEmail("satoshi@bitpay.com");
 		
 		Invoice invoice = this.bitpay.createInvoice(100, params);
 		
